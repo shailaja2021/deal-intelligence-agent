@@ -95,22 +95,29 @@ CRITICAL RULES:
 3. Be specific and concrete — exact numbers, names, and dates when available.
 4. Each field should have 3–6 bullet points (list items).
 5. Write in plain, direct language a sales rep can read in 10 seconds.
+6. ACQUISITION CHECK (HARD RULE): If {company_name} has been acquired, you MUST state the acquirer name, acquisition date (month + year), and acquisition price in company_overview. If price or date is not in the search results, write "acquisition price: Not found" and "acquisition date: Not found" — do NOT omit these fields. The pitch_angle section MUST be rewritten to reflect the acquiring company's ecosystem and priorities — do not pitch as if the company is still independent.
+7. CONFIDENCE TAGS: Every numeric stat (revenue, funding, valuation, user counts, growth %) must end with one of: [confirmed] if from a named source, [estimated] if from an analyst or projection, [inferred] if derived from context. Example: "$500M ARR [confirmed — CNBC, Sep 2025]"
+8. RECENCY GATE: Only list news items that have a confirmed month and year. Do NOT write "No recent news found" if you have dated items — only write it if the news section is completely empty after listing all found items.
+9. HQ REQUIRED: Always include "HQ: [city, country]" in company_overview. If not in the first search result, look for "[company] headquarters" in any other result before writing "HQ: Not found".
+10. PRIVATE COMPANY FLAG: If funding data is thin because the company is private, add "[limited public data — figures may be incomplete]" to the funding_growth section.
 
 WHAT TO EXTRACT:
 
 company_overview:
-- Company name, industry, and headquarters
-- Approximate company size (employees or scale)
+- REQUIRED: HQ city and country — write "HQ: Not found" if missing
+- REQUIRED: Acquisition status — state if acquired, by whom, when, and for how much
+- Company name, industry, and approximate size (employees or scale)
 - Year founded (if mentioned)
 - Business model: B2B, B2C, marketplace, etc.
 - Core products or services (1–2 sentences)
 
 funding_growth:
-- Total funding raised (exact amount if available)
-- Most recent funding round (type + amount + date)
+- Total funding raised with confidence tag
+- Most recent funding round (type + amount + date) with confidence tag
 - Key investors or backers named in results
-- Revenue or ARR if publicly disclosed
-- Any growth metrics mentioned (user count, customer count, YoY growth)
+- Revenue or ARR with confidence tag
+- Growth metrics (user count, customer count, YoY growth) with confidence tag
+- Add [limited public data — figures may be incomplete] if company is private and data is thin
 
 tech_stack:
 - Technologies, programming languages, or frameworks mentioned
@@ -119,7 +126,8 @@ tech_stack:
 - Notable technical differentiators mentioned
 
 recent_news:
-- Up to 3 recent news items, each with approximate date if available
+- Up to 3 recent news items — EACH MUST include month and year
+- If no news from past 6 months found, write: "No recent news found — last confirmed activity: [date]"
 - Recent product launches or major announcements
 - Partnerships or acquisitions
 - Hiring trend: are they actively hiring, doing layoffs, or stable?
