@@ -127,6 +127,22 @@ Tested Loom on the live Streamlit Cloud deployment — acquisition price ($975M)
 
 ---
 
+## Prompt Engineering Techniques
+
+| Technique | Used | Purpose |
+|-----------|------|---------|
+| Role prompting | ✅ | "You are a sales intelligence analyst" — improves output quality |
+| Structured output / schema prompting | ✅ | Pydantic schema enforces consistent 6-section format every run |
+| Explicit rules-based constraints | ✅ | 10 CRITICAL RULES override Claude's default behaviour |
+| Retrieval grounding | ✅ | Claude only uses search results — reduces hallucination |
+| Section-by-section instruction | ✅ | Separate instructions per section = consistent output per section |
+| Confidence tagging | ✅ | [confirmed] / [estimated] / [inferred] forces fact reliability evaluation |
+| Few-shot examples | ❌ | Most impactful unused technique — planned for V2 |
+| Chain of Thought (CoT) | ❌ | Not needed — task is extraction, not multi-step reasoning |
+| Self-consistency | ❌ | Not relevant given latency constraints |
+
+---
+
 ## Tech Stack
 
 | Layer | Tool | Purpose |
