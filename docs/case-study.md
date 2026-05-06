@@ -222,5 +222,3 @@ V1 validates the core hypothesis. Enterprise deployment would require:
 ## Links
 
 - Live App: [Deal Intelligence Agent](https://deal-intelligence-agent-kwv74ahq5wwodfvtetpia3.streamlit.app/)
-- GitHub: [REPO LINK]
-- PRD: [DOCS LINK]
