@@ -14,15 +14,9 @@ Sales reps spend 30–45 minutes researching a company before a call — or more
 
 ---
 
-## Demo
-
-*[GIF placeholder — add after recording]*
-
----
-
 ## Try it live
 
-**[STREAMLIT LINK — add after deploy]**
+**[deal-intelligence-agent-kwv74ahq5wwodfvtetpia3.streamlit.app]**
 
 ---
 
@@ -107,18 +101,12 @@ deal-intelligence-agent/
 - [System Design](docs/system-design.md) — Architecture diagram, data flow, tech tradeoffs
 - [Sprint Plan](docs/sprint-plan.md) — 3-week build plan with daily tasks and acceptance criteria
 - [Roadmap](docs/roadmap.md) — V1 through V4 feature roadmap with metrics and dependencies
-- [Case Study](docs/case-study.md) — Post-launch writeup (in progress)
+- [Case Study](docs/case-study.md) — Post-launch writeup 
 
 ---
 
 ## Built by
 
-**Shailaja** — BSA/PO with 5 years enterprise Salesforce delivery, pivoting to AI PM.
+**Shailaja** — BSA / Product Owner | Enterprise CRM Delivery | AI Product Development
 
-[Portfolio] | [LinkedIn] | [Notion Case Study]
 
----
-
-## License
-
-Apache 2.0 — free to use, fork, and build on.
