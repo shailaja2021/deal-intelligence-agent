@@ -80,7 +80,7 @@ Running `python src/agent.py` with any company name returns a valid, structured 
 
 **Tasks:**
 - [ ] Create `src/agent.py`
-- [ ] Initialize `ChatAnthropic` with `claude-sonnet-4-20250514`
+- [ ] Initialize `ChatAnthropic` with `claude-sonnet-4-6`
 - [ ] Implement `generate_battlecard(company_name: str) -> BattleCard`
 - [ ] Write the synthesis prompt with JSON schema and anti-hallucination instructions
 - [ ] Use `with_structured_output(BattleCard)` to get Pydantic-validated response

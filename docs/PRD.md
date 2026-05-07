@@ -9,7 +9,7 @@
 
 ## Executive Summary
 
-Deal Intelligence Agent is an AI-powered sales research tool that transforms a company name into a structured, six-section battlecard in under 30 seconds. It eliminates the 30–45 minute manual research burden that causes most sales reps to skip pre-call preparation entirely. Built for B2B SaaS sales teams, it uses LangChain, Claude claude-sonnet-4-20250514, and public web data to deliver consistent, actionable intelligence before every call. V1 is free, public, and requires no login or setup — removing every adoption barrier.
+Deal Intelligence Agent is an AI-powered sales research tool that transforms a company name into a structured, six-section battlecard in under 30 seconds. It eliminates the 30–45 minute manual research burden that causes most sales reps to skip pre-call preparation entirely. Built for B2B SaaS sales teams, it uses LangChain, claude-sonnet-4-6, and public web data to deliver consistent, actionable intelligence before every call. V1 is free, public, and requires no login or setup — removing every adoption barrier.
 
 ---
 
@@ -97,7 +97,7 @@ Sales reps today must piece together company intelligence from 5–8 different s
 1. The app shall accept a plain text company name as the only required input.
 2. The app shall trigger a web research process when the user clicks "Generate Battlecard."
 3. The agent shall run exactly 4 targeted DuckDuckGo searches covering: company overview, funding/investors, tech stack, and recent news.
-4. The agent shall pass all search results to Claude claude-sonnet-4-20250514 with a structured synthesis prompt.
+4. The agent shall pass all search results to claude-sonnet-4-6 with a structured synthesis prompt.
 5. Claude shall return a response that maps exactly to the 6-section BattleCard Pydantic schema.
 6. The Pydantic model shall validate the response structure before rendering.
 7. The UI shall display the battlecard in 6 labeled, expandable sections with section-specific emojis.
@@ -122,7 +122,7 @@ Sales reps today must piece together company intelligence from 5–8 different s
 | **Security** | No PII stored or logged; no user accounts; no session data persisted between requests |
 | **Privacy** | Only publicly available web data used; no scraping behind authenticated pages |
 | **Accessibility** | Readable contrast ratios; clean layout readable on desktop browsers |
-| **Cost** | Zero cost to end user; API cost per run < $0.05 using Claude claude-sonnet-4-20250514 |
+| **Cost** | Zero cost to end user; API cost per run < $0.05 using claude-sonnet-4-6 |
 | **Maintainability** | All code commented; modular structure allows swapping LLM or search tool independently |
 | **Portability** | Runs locally with `streamlit run src/app.py` after pip install; no Docker required |
 
@@ -152,7 +152,7 @@ The following will NOT be built in V1:
 |----------|---------|
 | **Must Have** | Company name text input |
 | **Must Have** | 4-query DuckDuckGo web research |
-| **Must Have** | Claude claude-sonnet-4-20250514 structured synthesis |
+| **Must Have** | claude-sonnet-4-6 structured synthesis |
 | **Must Have** | Pydantic-validated 6-section battlecard output |
 | **Must Have** | Battlecard rendered in UI with section headers |
 | **Must Have** | Response in < 30 seconds |
@@ -251,4 +251,4 @@ The following will NOT be built in V1:
 
 6. **V2 timing:** If adoption metrics hit KR targets in Week 1, should we accelerate V2 CRM integration, or stay focused on improving V1 quality first?
 
-7. **Cost per run:** At Claude claude-sonnet-4-20250514 pricing, what is the actual API cost per battlecard at scale? At what usage volume does this become unsustainable without monetization?
+7. **Cost per run:** At claude-sonnet-4-6 pricing, what is the actual API cost per battlecard at scale? At what usage volume does this become unsustainable without monetization?

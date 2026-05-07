@@ -37,7 +37,7 @@ The Deal Intelligence Agent is a single-user, request-response web application. 
 │                                                                 │
 │  1. Calls search_company() from tools.py                        │
 │  2. Builds structured synthesis prompt                          │
-│  3. Calls Claude claude-sonnet-4-20250514 with structured output│
+│  3. Calls claude-sonnet-4-6 with structured output│
 │  4. Validates response with Pydantic BattleCard model           │
 │  5. Returns BattleCard object to app.py                         │
 └─────────────┬─────────────────────────────┬─────────────────────┘
@@ -45,7 +45,7 @@ The Deal Intelligence Agent is a single-user, request-response web application. 
               ▼                             ▼
 ┌─────────────────────────┐   ┌─────────────────────────────────┐
 │      src/tools.py        │   │    Anthropic API                │
-│  (DuckDuckGo Wrapper)    │   │  (claude-sonnet-4-20250514)     │
+│  (DuckDuckGo Wrapper)    │   │  (claude-sonnet-4-6)     │
 │                         │   │                                 │
 │  Runs 4 searches:        │   │  - Receives raw search results  │
 │  1. Overview/model       │   │  - Receives structured prompt   │
@@ -108,7 +108,7 @@ The Deal Intelligence Agent is a single-user, request-response web application. 
 **What it does:**
 - Imports `search_company` from `tools.py`
 - Imports `BattleCard` from `models.py`
-- Initializes `ChatAnthropic` with `claude-sonnet-4-20250514`
+- Initializes `ChatAnthropic` with `claude-sonnet-4-6`
 - Exposes one public function: `generate_battlecard(company_name: str) -> BattleCard`
 - Inside that function:
   1. Calls `search_company(company_name)` → gets raw search string
@@ -145,7 +145,7 @@ DuckDuckGo returns top-10 results for a query. A single generic query ("tell me 
 
 ---
 
-### 4. Anthropic Claude claude-sonnet-4-20250514 — LLM Synthesis Engine
+### 4. Anthropic claude-sonnet-4-6 — LLM Synthesis Engine
 
 **Responsibility:** Read raw search results. Extract and structure the battlecard.
 
@@ -155,10 +155,10 @@ DuckDuckGo returns top-10 results for a query. A single generic query ("tell me 
 - Instructed to only use facts present in the search results
 - Instructed to write "Not found" when information is absent, not to fabricate
 
-**Why Claude claude-sonnet-4-20250514:**
+**Why claude-sonnet-4-6:**
 - Reliable structured JSON output via LangChain's `with_structured_output`
 - Strong instruction-following for "do not hallucinate" constraints
-- Reasonable cost per run (~$0.02–0.05 per battlecard at claude-sonnet-4-20250514 pricing)
+- Reasonable cost per run (~$0.02–0.05 per battlecard at claude-sonnet-4-6 pricing)
 - Already available to the builder; no new vendor procurement
 
 **Vendor risk note:**
@@ -231,7 +231,7 @@ Step 5:  agent.py builds a structured prompt:
          - Instructs: "Extract and structure the battlecard. Only use facts from results.
                        Write 'Not found' if information is absent. Do not hallucinate."
 
-Step 6:  agent.py calls Claude claude-sonnet-4-20250514 via LangChain ChatAnthropic
+Step 6:  agent.py calls claude-sonnet-4-6 via LangChain ChatAnthropic
          with .with_structured_output(BattleCard)
          → Claude processes the prompt (~5–15 seconds)
          → Claude returns JSON matching the BattleCard schema
@@ -263,7 +263,7 @@ Step 12: User reads the battlecard, clicks download, walks into the call prepare
 | Decision | Chosen | Alternative | Why Chosen | Tradeoff |
 |----------|--------|-------------|------------|----------|
 | **UI framework** | Streamlit | FastAPI + React | Zero frontend code; ships in 1 day | Limited UI customization |
-| **LLM** | Claude claude-sonnet-4-20250514 | GPT-4o, Gemini 1.5 Pro | Best structured output; already have API access | Vendor lock-in to Anthropic |
+| **LLM** | claude-sonnet-4-6 | GPT-4o, Gemini 1.5 Pro | Best structured output; already have API access | Vendor lock-in to Anthropic |
 | **Agent framework** | LangChain | Raw API calls, LlamaIndex | with_structured_output(); LangSmith integration built-in | More abstraction than needed for V1; harder to debug |
 | **Web search** | DuckDuckGo (free) | SerpAPI, Bing API | Zero cost; no API key required | Rate limits; less reliable than paid APIs |
 | **Structured output** | Pydantic | JSON parsing + dict | Automatic validation; clean Python objects; LangChain native | Minor learning curve |
@@ -286,7 +286,7 @@ Claude is instructed not to fabricate, but LLMs can still confabulate plausible-
 ### Response Time Variance
 Target is < 30 seconds. Actual time depends on:
 - DuckDuckGo response time (variable; ~1–3 seconds per query)
-- Anthropic API latency (variable; ~5–15 seconds for claude-sonnet-4-20250514)
+- Anthropic API latency (variable; ~5–15 seconds for claude-sonnet-4-6)
 - Streamlit Cloud network conditions
 
 Under poor conditions, response could exceed 30 seconds. No hard timeout is implemented in V1.
@@ -301,7 +301,7 @@ Every request runs fresh searches and a fresh LLM call. Searching the same compa
 ### V1 (Current)
 - Single user, stateless
 - DuckDuckGo (free, rate-limited)
-- Claude claude-sonnet-4-20250514
+- claude-sonnet-4-6
 - No caching
 - Streamlit Cloud (free tier)
 
