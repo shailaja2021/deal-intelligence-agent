@@ -34,7 +34,7 @@ Cold calling without research is a waste of everyone's time — the rep sounds g
 | UI | Streamlit | Fastest way to ship a working UI |
 | Agent framework | LangChain | Structured output + LangSmith built-in |
 | Web search | DuckDuckGo (langchain-community) | Free, no API key required |
-| LLM | Claude claude-sonnet-4-20250514 (Anthropic) | Best structured JSON output; strong instruction-following |
+| LLM | Claude claude-sonnet-4-6 (Anthropic) | Best structured JSON output; strong instruction-following |
 | Data validation | Pydantic v2 | Consistent battlecard schema, every run |
 | Observability | LangSmith | Traces every run; enables quality evals |
 | Deployment | Streamlit Cloud | Free, instant deploy from GitHub |
