@@ -14,15 +14,9 @@ Sales reps spend 30–45 minutes researching a company before a call — or more
 
 ---
 
-## Demo
-
-*[GIF placeholder — add after recording]*
-
----
-
 ## Try it live
 
-**[STREAMLIT LINK — add after deploy]**
+**[deal-intelligence-agent-kwv74ahq5wwodfvtetpia3.streamlit.app]**
 
 ---
 
@@ -40,7 +34,7 @@ Cold calling without research is a waste of everyone's time — the rep sounds g
 | UI | Streamlit | Fastest way to ship a working UI |
 | Agent framework | LangChain | Structured output + LangSmith built-in |
 | Web search | DuckDuckGo (langchain-community) | Free, no API key required |
-| LLM | Claude claude-sonnet-4-20250514 (Anthropic) | Best structured JSON output; strong instruction-following |
+| LLM | Claude claude-sonnet-4-6 (Anthropic) | Best structured JSON output; strong instruction-following |
 | Data validation | Pydantic v2 | Consistent battlecard schema, every run |
 | Observability | LangSmith | Traces every run; enables quality evals |
 | Deployment | Streamlit Cloud | Free, instant deploy from GitHub |
@@ -107,18 +101,12 @@ deal-intelligence-agent/
 - [System Design](docs/system-design.md) — Architecture diagram, data flow, tech tradeoffs
 - [Sprint Plan](docs/sprint-plan.md) — 3-week build plan with daily tasks and acceptance criteria
 - [Roadmap](docs/roadmap.md) — V1 through V4 feature roadmap with metrics and dependencies
-- [Case Study](docs/case-study.md) — Post-launch writeup (in progress)
+- [Case Study](docs/case-study.md) — Post-launch writeup 
 
 ---
 
 ## Built by
 
-**Shailaja** — BSA/PO with 5 years enterprise Salesforce delivery, pivoting to AI PM.
+**Shailaja** — BSA / Product Owner | Enterprise CRM Delivery | AI Product Development
 
-[Portfolio] | [LinkedIn] | [Notion Case Study]
 
----
-
-## License
-
-Apache 2.0 — free to use, fork, and build on.
