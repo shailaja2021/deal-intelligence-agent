@@ -11,9 +11,9 @@
 | Version | Timeframe | Theme | Key Metric |
 |---------|-----------|-------|------------|
 | V1 — NOW | Shipping | Core battlecard, free & public | Battlecards generated per week |
-| V2 — NEXT | 1–2 months | Save, share, and connect to CRM | Battlecards saved to CRM per week |
-| V3 — LATER | 3–6 months | Automatic research, team workflow | Battlecards auto-triggered per week |
-| V4 — FUTURE | 6–12 months | Full sales intelligence platform | Revenue influenced by battlecard-assisted calls |
+| V2 — NEXT | TBD | Save, share, and connect to CRM | Battlecards saved to CRM per week |
+| V3 — LATER | TBD | Automatic research, team workflow | Battlecards auto-triggered per week |
+| V4 — FUTURE | TBD | Full sales intelligence platform | Revenue influenced by battlecard-assisted calls |
 
 ---
 
@@ -54,7 +54,7 @@
 
 ---
 
-## V2 — NEXT (1–2 months post-launch)
+## V2 — NEXT 
 
 **Theme:** Reps can save, share, and sync battlecards. Research becomes a team asset, not a one-time event.
 
@@ -92,7 +92,7 @@ CRM integration requires OAuth flows and authenticated app setup — this adds w
 
 ---
 
-## V3 — LATER (3–6 months post-launch)
+## V3 — LATER 
 
 **Theme:** Research becomes automatic. The battlecard appears before the rep even thinks to ask.
 
@@ -132,8 +132,7 @@ Calendar and Slack integrations require user auth, webhook infrastructure, and b
 
 ---
 
-## V4 — FUTURE (6–12 months post-launch)
-
+## V4 — FUTURE 
 **Theme:** Full sales intelligence loop. Before the call, during the call, after the call.
 
 ### Features
